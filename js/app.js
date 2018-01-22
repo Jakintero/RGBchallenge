@@ -1,5 +1,13 @@
 var correct = Math.floor(Math.random() * 2);
 
+$('.option').on('click', function() {
+  var index = $('.option').index(this);
+  if (index == correct) {
+    alert("Muy bien!!");
+  } else {
+      alert("Re paila!");
+  }
+});
 
 $('.option').each(function(index) {
 
