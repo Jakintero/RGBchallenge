@@ -22,12 +22,14 @@ function game() {
 }
 
 function guess() {
+  $(this).addClass('scale');
+
     var index = $('.option').index(this);
     if (index == correct) {
-      alert("Muy bien!!");
+      $('.result.won').show();
       score++;
     } else {
-        alert("Viejo, me extraña!");
+        $('.result.lost').show();
       score = 0;
   }
     $('.score span').text(score);
