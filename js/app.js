@@ -1,4 +1,5 @@
 var correct;
+var score = 0;
 
 // Inicializa el juego
 game();
@@ -24,11 +25,14 @@ function guess() {
     var index = $('.option').index(this);
     if (index == correct) {
       alert("Muy bien!!");
+      score++;
     } else {
-        alert("Re paila!");
-    }
-    game();
+        alert("Viejo, me extraña!");
+      score = 0;
   }
+    $('.score span').text(score);
+    game();
+}
 
 
 
