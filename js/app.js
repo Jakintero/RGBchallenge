@@ -6,12 +6,15 @@ game();
 
 // Enlaza el click de los círculos a la función guess
 $('.option').on('click', guess);
+$('.close a').on('click', function() {
+  $('.result').hide();
+  $('.option').removeClass('scale');
+  game();
+});
 
 function game() {
   correct = Math.floor(Math.random() * 2);
   $('.option').each(function(index) {
-
-
     var color = generateColor();
     $(this).css('background-color', color);
 
@@ -33,7 +36,6 @@ function guess() {
       score = 0;
   }
     $('.score span').text(score);
-    game();
 }
 
 
